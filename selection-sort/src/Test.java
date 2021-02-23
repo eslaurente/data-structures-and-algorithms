@@ -12,5 +12,14 @@ public class Test {
         SelectionSort.sort(array);
         System.out.println("After sort");
         Arrays.stream(array).forEach(System.out::println);
+
+        // Assertions
+        AssertElementEquals.check(array, 0, -22);
+        AssertElementEquals.check(array, 1, -15);
+        AssertElementEquals.check(array, 2, 1);
+        AssertElementEquals.check(array, 3, 7);
+        AssertElementEquals.check(array, 4, 20);
+        AssertElementEquals.check(array, 5, 35);
+        AssertElementEquals.check(array, 6, 55);
     }
 }
