@@ -1,5 +1,8 @@
 package sort.selectionsort;
 
+/**
+ * https://stackabuse.com/selection-sort-in-java/
+ */
 public class SelectionSort {
 
     public static void sort(int[] array) {

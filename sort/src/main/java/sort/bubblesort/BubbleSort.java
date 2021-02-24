@@ -1,6 +1,9 @@
 package sort.bubblesort;
 
-abstract public class BubbleSort {
+/**
+ * https://stackabuse.com/bubble-sort-in-java/
+ */
+public class BubbleSort {
     public static void sort(int[] array) {
         for (int lastUnsortedIndex = array.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
             for (int i = 0; i < lastUnsortedIndex; i++) {
