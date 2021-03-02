@@ -1,4 +1,4 @@
-package sort.insertionsort;
+package sort.mergesort;
 
 import com.udemy.testhelpers.AssertElementEquals;
 
@@ -13,7 +13,7 @@ public class Test {
         Arrays.stream(array).forEach(System.out::println);
         System.out.println();
 
-        InsertionSort.sort(array);
+        MergeSort.sort(array);
 
         System.out.println("After sort");
         Arrays.stream(array).forEach(System.out::println);
