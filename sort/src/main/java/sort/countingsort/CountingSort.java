@@ -1,7 +1,7 @@
 package sort.countingsort;
 
 /**
- * https://stackabuse.com/bubble-sort-in-java/
+ * https://www.interviewcake.com/concept/java/counting-sort
  */
 public class CountingSort {
     public static void sort(int[] array, int min, int max) {
