@@ -72,4 +72,64 @@ public class MergeSort {
                 t // number of elements to copy only spans the temporary array length
         );
     }
+
+    public static void sortDescending(int[] array) {
+        if (array.length < 2) {
+            return;
+        }
+        mergeSortDescending(array, 0, array.length);
+    }
+
+    public static void mergeSortDescending(int[] array, int startIndex, int endIndex) {
+        if (endIndex - startIndex < 2) {
+            return;
+        }
+
+        int midIndex = (startIndex + endIndex) / 2;
+
+        mergeSortDescending(array, startIndex, midIndex);
+
+        mergeSortDescending(array, midIndex, endIndex);
+
+        mergeDescending(array, startIndex, midIndex, endIndex);
+    }
+
+    public static void mergeDescending(int[] array, int startIndex, int midIndex, int endIndex) {
+        if (array[midIndex - 1] > array[midIndex]) {
+            // Optimization:
+            // Since left and right sub-arrays are already sorted, if last element of left sub-array <= first element
+            // of right sub-array, entire array is already sorted.
+            return;
+        }
+
+        int i = startIndex;
+        int j = midIndex;
+        int t = 0;
+
+        int[] temp = new int[endIndex - startIndex];
+
+        while (i < midIndex && j < endIndex) {
+            // If left element at i > to right element at j, copy left element to temp[t], then increment i
+            // If right element at j > to left element at i, copy right element to temp[t], then increment j
+            // Increment t
+            temp[t++] = array[i] > array[j] ? array[i++] : array[j++];
+        }
+
+        // If there are leftover elements in left array not yet traversed and move them to the END of the input array
+        System.arraycopy(
+                array, // source array
+                i, // first index of left array we haven't handled yet
+                array, // destination array
+                startIndex + t, // start index in input array to move leftover elements (end of right array)
+                midIndex - i // number of elements we didn't copy over
+        );
+        // Merge temp array into input array by copying elements
+        System.arraycopy(
+                temp, // temp array (sorted)
+                0, // start of the temp array
+                array, // destination array (input array)
+                startIndex, // starting index in destination
+                t // number of elements to copy only spans the temporary array length
+        );
+    }
 }

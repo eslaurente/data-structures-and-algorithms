@@ -13,7 +13,8 @@ public class Test {
         Arrays.stream(array).forEach(System.out::println);
         System.out.println();
 
-        InsertionSort.sort(array);
+//        InsertionSort.sort(array);
+        InsertionSort.sortRecursive(array);
 
         System.out.println("After sort");
         Arrays.stream(array).forEach(System.out::println);
