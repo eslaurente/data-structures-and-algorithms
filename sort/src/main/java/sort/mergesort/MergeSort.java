@@ -73,6 +73,10 @@ public class MergeSort {
         );
     }
 
+    /**
+     * Challenge #1: https://www.udemy.com/course/data-structures-and-algorithms-deep-dive-using-java/learn/lecture/8435810#overview
+     * Modify merge sort algorithm so that it sorts in descending order
+     */
     public static void sortDescending(int[] array) {
         if (array.length < 2) {
             return;

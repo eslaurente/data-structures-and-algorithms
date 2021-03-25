@@ -21,6 +21,10 @@ public class InsertionSort {
         }
     }
 
+    /**
+     * Challenge #2: https://www.udemy.com/course/data-structures-and-algorithms-deep-dive-using-java/learn/lecture/8435814#overview
+     * Refactor original insertion sort to use recursion
+     */
     public static void sortRecursive(int[] array) {
         sortRecursive(array, array.length);
     }
